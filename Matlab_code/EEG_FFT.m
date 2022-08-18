@@ -17,10 +17,10 @@ title('EEG Signal')
 
 % Sampling frequency
 N=length(a);
- figure;
- freqz(a)  % freq V/S eeg signal 
+figure;
+freqz(a)  % freq V/S eeg signal 
 
- % EXTRACTION OF BANDS FROM EEG SIGNAL 
+% EXTRACTION OF BANDS FROM EEG SIGNAL 
 waveletFunction = 'db8';
                 [C,L] = wavedec(a,8,waveletFunction);
        
@@ -44,7 +44,7 @@ waveletFunction = 'db8';
                 A8 = wrcoef('a',C,L,waveletFunction,8); %DELTA
                 
                 Gamma = D5;
-                 figure; subplot(5,1,1); plot(1:1:length(Gamma),Gamma);title('GAMMA');
+                figure; subplot(5,1,1); plot(1:1:length(Gamma),Gamma);title('GAMMA');
                
                 Beta = D6;
                 subplot(5,1,2); plot(1:1:length(Beta), Beta); title('BETA');
@@ -57,7 +57,7 @@ waveletFunction = 'db8';
                 subplot(5,1,4); plot(1:1:length(Theta),Theta);title('THETA');
                 D8 = detrend(D8,0);
                 
-                 Delta = A8;
+                Delta = A8;
                 subplot(5,1,5);plot(1:1:length(Delta),Delta);title('DELTA');
  
 % GAMMA FFT
@@ -90,8 +90,8 @@ subplot(513);plot(freq3,abs(xdft3));title('ALPHA-FREQUENCY');
 [~,I] = max(abs(xdft3));
 fprintf('Alpha:Maximum occurs at %f Hz.\n',freq3(I));
            
- %THETA FFT
- xdft4 = fft(D8);
+%THETA FFT
+xdft4 = fft(D8);
 freq4 = 0:N/length(D8):a/2;
 xdft4 = xdft4(1:a/2+1);
 % figure;
