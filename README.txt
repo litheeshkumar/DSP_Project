@@ -1,4 +1,4 @@
-Academic Course Project
+<h1>Academic Course Project</h1>
 Course name: Digital Signal Processing
 Project name: EEG Signal Analysis
 
